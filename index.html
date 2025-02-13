@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Jamite Ngola - Personal Portfolio</title>
+    <!-- Favicon -->
+    <link href="assets/images/favicon.png" rel="shortcut icon" />
+    <!-- CSS -->
+    <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/magnific-popup/magnific-popup.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <!-- Fonts/Icons -->
+    <link
+      href="assets/plugins/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/fontawesome/css/all.css" rel="stylesheet" />
+    <!-- No <head> do seu documento -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+      body {
+        background: linear-gradient(45deg, #150c2b, #000000);
+        transition: background 1s ease;
+      }
+
+      body.scrolled {
+        background: black;
+      }
+      /* Estilo do "puppet" (caixa de mensagem) */
+      #puppet {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #fff;
+        color: rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-family: sans-serif;
+        font-size: 16px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body data-preloader="true">
+    <!-- Cursor -->
+    <div id="cursor"></div>
+    <!-- end Cursor -->
+
+    <!-- Header -->
+    <div class="header">
+      <div class="container-fluid">
+        <div class="header-wrapper">
+          <!-- Header Logo -->
+          <div class="header-logo">
+            <h2>Jamite</h2>
+          </div>
+          <!-- Header Nav -->
+          <div class="header-nav">
+            <a class="button button-sm button-dot me-2 me-lg-3" href="#contact">
+              <span data-text="Vamos Conversar">Vamos Conversar</span>
+            </a>
+            <!-- Nav Menu Toggle -->
+            <button
+              id="nav-toggle"
+              class="button button-sm button-dot button-white"
+            >
+              <span data-text="Menu">Menu</span>
+            </button>
+            <!-- Nav Menu Box -->
+            <div class="nav-box">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#about"
+                    ><i class="bi bi-arrow-right"></i>Sobre Mim</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#services"
+                    ><i class="bi bi-arrow-right"></i>Serviços</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#portfolio"
+                    ><i class="bi bi-arrow-right"></i>Portfolio</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#awards"
+                    ><i class="bi bi-arrow-right"></i>Conquistas</a
+                  >
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact"
+                    ><i class="bi bi-arrow-right"></i>Contactos</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end header-nav -->
+        </div>
+        <!-- end header-wrapper -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end Header -->
+
+    <main data-bs-spy="scroll" data-bs-target=".nav-box">
+      <div id="about" class="hero-section" data-aos="fade-up">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="hero-heading display-1 fw-bold mb-0 stroke-text">
+                Jamite Ngola
+              </h1>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </div>
+      <!-- end Hero section -->
+
+      <!-- About section -->
+      <div class="container">
+        <div class="row g-4 g-md-5">
+          <div
+            class="col-12 col-lg-4 order-lg-2 text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <!-- Hero Avatar -->
+            <div class="hero-avatar">
+              <img
+                src="assets/images/jamitengola.jpg"
+                alt=""
+                style="width: auto; height: 100%"
+              />
+            </div>
+            <!-- end Hero Avatar -->
+          </div>
+          <div
+            class="col-12 col-lg-4 order-lg-1"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="row g-4 g-lg-5">
+              <div class="col-12 col-md-4 col-lg-12">
+                <h6 class="sm-heading">Biografia</h6>
+                <p>
+                  Não sou apenas um programador; sou um entusiasta de
+                  tecnologia. Especializado em desenvolvimento de soluções
+                  escaláveis. Além disso, dedico-me a ser o melhor pai possível
+                  e a inspirar aqueles ao meu redor, contribuindo para a
+                  construção de um legado marcante.
+                </p>
+              </div>
+              <div class="col-6 col-md-4 col-lg-12">
+                <h6 class="sm-heading">Habilidades</h6>
+                <ul class="list-inline-dot">
+                  <li>Desenvolvimento</li>
+                  <li>BackEnd</li>
+                  <li>Frontend</li>
+                  <li>Android</li>
+                  <li>IOS</li>
+                  <li>Bases de Dados</li>
+                  <li>Versionamento de Código</li>
+                  <li>Inteligência de Negócio</li>
+                  <li>Metodologias de Desenvolvimento</li>
+                  <li>Arquitetura de Software</li>
+                  <li>Testes de Software</li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4 col-lg-12">
+                <h6 class="sm-heading">Redes</h6>
+                <ul class="list-inline">
+                  <li>
+                    <a
+                      class="button-circle button-circle-sm"
+                      target="_blank"
+                      href="https://www.facebook.com/muticast.mitchinick/"
+                    >
+                      <i class="bi bi-facebook"></i>
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="button-circle button-circle-sm"
+                      target="_blank"
+                      href="https://x.com/jaimemagico1"
+                    >
+                      <i class="bi bi-twitter"></i>
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="button-circle button-circle-sm"
+                      target="_blank"
+                      href="https://www.instagram.com/jaime_magico"
+                    >
+                      <i class="bi bi-instagram"></i>
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="button-circle button-circle-sm"
+                      target="_blank"
+                      href="https://github.com/jamitengola"
+                    >
+                      <i class="bi bi-github"></i>
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- end row(inner) -->
+          </div>
+          <div
+            class="col-12 col-md-12 col-lg-4 order-lg-3 text-lg-end"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="row g-4 g-lg-5">
+              <div class="col-4 col-lg-12">
+                <h6 class="sm-heading">PROJETOS ENVOLVIDO</h6>
+                <h1 class="fw-light display-4 mb-0 line-height-110">52</h1>
+              </div>
+              <div class="col-4 col-lg-12">
+                <h6 class="sm-heading">Anos de Experiência</h6>
+                <h1 class="fw-light display-4 mb-0 line-height-110">8+</h1>
+              </div>
+              <div class="col-4 col-lg-12">
+                <h6 class="sm-heading">Clientes</h6>
+                <h1 class="fw-light display-4 mb-0 line-height-110">22</h1>
+              </div>
+            </div>
+            <!-- end row(inner) -->
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+
+      <div id="puppet"></div>
+      <!-- end container -->
+      <!-- end About section -->
+
+      <!-- Services section -->
+      <div id="services" class="section">
+        <div class="container">
+          <div class="row g-4 g-xl-5">
+            <div class="col-12 col-xl-4">
+              <span class="title-heading text-white-04">Serviços</span>
+              <h1 class="display-3 fw-medium mb-0">
+                O que Eu <span class="text-gradient">Faço</span>
+              </h1>
+            </div>
+            <div class="col-12 col-xl-8">
+              <div class="row g-4">
+                <!-- Service box 1 -->
+                <div class="col-12">
+                  <div class="service-box">
+                    <div class="service-order">
+                      <h3>01/</h3>
+                    </div>
+                    <div class="service-title">
+                      <i class="fa-solid fa-sitemap"></i>
+                      <h3>Arquitetura de software</h3>
+                    </div>
+                    <div class="service-text">
+                      <p>
+                        Planejamento e estruturação de sistemas escaláveis,
+                        aplicando princípios de arquitetura de software e
+                        padrões modernos para garantir robustez e eficiência.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service box 2 -->
+                <div class="col-12">
+                  <div class="service-box">
+                    <div class="service-order">
+                      <h3>02/</h3>
+                    </div>
+                    <div class="service-title">
+                      <i class="bi bi-code-slash"></i>
+                      <h3>Desenvolvimento</h3>
+                    </div>
+                    <div class="service-text">
+                      <p>
+                        Desenvolvimento de aplicações modernas utilizando Back e
+                        Frontend com os framework's necessários, garantindo alta
+                        performance e experiência de usuário otimizada.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Service box 3 -->
+                <div class="col-12">
+                  <div class="service-box">
+                    <div class="service-order">
+                      <h3>03/</h3>
+                    </div>
+                    <div class="service-title">
+                      <i class="bi bi-laptop"></i>
+                      <h3>Consultoria em Tecnologia</h3>
+                    </div>
+                    <div class="service-text">
+                      <p>
+                        Análise e implementação de soluções tecnológicas
+                        inovadoras, alinhadas às necessidades do mercado, com
+                        foco em performance, segurança e inovação digital.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="service-box">
+                    <div class="service-order">
+                      <h3>04/</h3>
+                    </div>
+                    <div class="service-title">
+                      <i class="bi bi-laptop"></i>
+                      <h3>Formação e Treinamento</h3>
+                    </div>
+                    <div class="service-text">
+                      <p>
+                        Capacitação de profissionais e equipes com cursos e
+                        mentorias em desenvolvimento, arquitetura de software,
+                        análise de dados, inteligência de negócio e melhores
+                        práticas para projetos escaláveis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end Service box 3 -->
+              </div>
+              <!-- end row(inner) -->
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </div>
+      <!-- end Services section -->
+
+      <!-- Clients section -->
+      <div class="section pt-10" style="background-color: #c9d1da">
+        <div class="container">
+          <div class="swiper clients-slider">
+            <div class="swiper-wrapper" id="clients-slider">
+              <!-- Os slides serão inseridos dinamicamente aqui -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Lista de clientes com URLs das imagens e links
+        const clients = [
+          {
+            logo: "https://lia.ao/wp-content/uploads/2025/01/New-Logo-LIA-150x150.png",
+            link: "https://lia.ao",
+          },
+          {
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeV7mYzrcRMKGCSAqY_VoSoBHB7VFVC_SG9Q&s",
+            link: "kwizivamo.ao",
+          },
+          {
+            logo: "https://epemartrading.ao/wp-content/themes/tsco/assets/img/f-logo.png",
+            link: "https://epemartrading.ao/",
+          },
+          {
+            logo: "https://kilimotrade.com/wp/wp-content/uploads/2024/11/WhatsApp_Image_2024-11-01_at_08.21.40-removebg-preview.png",
+            link: "https://kilimotrade.com",
+          },
+          {
+            logo: "https://www.klemac.ao/assets/theme/images/clients/parceir_nacio_3.jpg",
+            link: "https://majofire.ao",
+          },
+
+          {
+            logo: "https://www.inefop.gov.ao/images/INEFOP_azul.png",
+            link: "https://www.inefop.gov.ao",
+          },
+        ];
+
+        // Seleciona o contêiner do slider
+        const sliderContainer = document.getElementById("clients-slider");
+
+        // Adiciona dinamicamente os slides
+        clients.forEach((client) => {
+          const slide = document.createElement("div");
+          slide.classList.add("swiper-slide");
+          slide.innerHTML = `
+			<div class="client-box">
+			  <a href="${client.link}">
+				<img src="${client.logo}" alt="Client Logo" style="width: auto; height: 100px" />
+			  </a>
+			</div>
+		  `;
+          sliderContainer.appendChild(slide);
+        });
+      </script>
+
+      <div id="portfolio" class="section-box">
+        <div class="section-sm bg-dark border-radius-1">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <span class="title-heading text-white-04">Portfolio</span>
+                <h1 class="display-3 fw-medium">
+                  Trabalhos <span class="text-gradient">Recentes</span>
+                </h1>
+                <p>
+                  Explore uma seleção dos meus projetos mais recentes, onde
+                  criatividade e tecnologia se unem para transformar ideias em
+                  soluções impactantes. Cada trabalho reflete dedicação,
+                  inovação e a busca constante pela excelência em cada detalhe.
+                </p>
+                <!-- Slider Nav -->
+                <div class="mt-4">
+                  <div class="swiper-portfolio-prev button-circle cursor-link">
+                    <i class="bi bi-arrow-left"></i>
+                    <i class="bi bi-arrow-left"></i>
+                  </div>
+                  <div class="swiper-portfolio-next button-circle cursor-link">
+                    <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-arrow-right"></i>
+                  </div>
+                </div>
+                <!-- end Slider Nav -->
+              </div>
+            </div>
+            <!-- Estrutura do slider: o container "swiper-wrapper" receberá os slides dinamicamente -->
+            <div class="swiper portfolio-slider mt-4 mt-lg-5">
+              <div class="swiper-wrapper" id="slider">
+                <!-- Os slides serão injetados aqui via JavaScript -->
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const projects = [
+                  {
+                    title: "Portal O Estandarte",
+                    image: "assets/images/estandarte.png",
+                    categories: ["Notícias", "Arte", "Eventos"],
+                    link: "portfolio-single.html?id=7",
+                  },
+                  {
+                    title: "Aplicaçã de Gestão de Imoveis e Turismo",
+                    image: "assets/images/Ukubiku.png",
+                    categories: ["Android", "IOS", "Flutter"],
+                    link: "portfolio-single.html?id=6",
+                  },
+                  {
+                    title: "Portal Urbanismo e Habitação 2024",
+                    image: "assets/images/urbanismo.png",
+                    categories: ["Urbanismo", "Habitação", "Evento"],
+                    link: "portfolio-single.html?id=1",
+                  },
+                  {
+                    title: "Portal da Lei Geral do Trabalho",
+                    image: "assets/images/lgt.png",
+                    categories: ["Legislação", "Trabalho", "Governo"],
+                    link: "portfolio-single.html?id=2",
+                  },
+                  {
+                    title: "Portal da Epemar Trading",
+                    image: "assets/images/epemar.png",
+                    categories: ["E-commerce", "Institucional", "Empresa"],
+                    link: "portfolio-single.html?id=3",
+                  },
+                  {
+                    title:
+                      "Portal & Sistema de Gestão - Luanda International Academy",
+                    image: "assets/images/liaa.png",
+                    categories: ["Educação", "Gestão", "Academia"],
+                    link: "portfolio-single.html?id=4",
+                  },
+                  {
+                    title:
+                      "Portal & Sistema de Gestão de Credenciais - RMETPS-SADC",
+                    image: "assets/images/sadc.png",
+                    categories: ["Credenciais", "Gestão", "Eventos"],
+                    link: "portfolio-single.html?id=5",
+                  },
+                ];
+                const portfolioContainer = document.getElementById("slider");
+
+                // Gera todos os slides de uma vez para melhor performance
+                const slidesHTML = projects
+                  .map((project) => {
+                    const categoriesHTML = project.categories
+                      .map(
+                        (category) => `
+              			<li>
+              			  <a class="link-hover" href="#">
+              				<span data-text="${category}">${category}</span>
+              			  </a>
+              			</li>
+              		  `
+                      )
+                      .join("");
+
+                    return `
+              		  <div class="swiper-slide">
+              			<div class="portfolio-box">
+              			  <div class="portfolio-img">
+              				<a href="${project.link}">
+              				  <img src="${project.image}" alt="${project.title}" />
+              				</a>
+              			  </div>
+              			  <div class="pt-4">
+              				<ul class="list-inline-dot sm-heading text-white mb-2">
+              				  ${categoriesHTML}
+              				</ul>
+              				<h2>
+              				  <a class="portfolio-caption" href="${project.link}">
+              					<i class="bi bi-arrow-right"></i>
+              					${project.title}
+              				  </a>
+              				</h2>
+              			  </div>
+              			</div>
+              		  </div>
+              		`;
+                  })
+                  .join("");
+
+                portfolioContainer.innerHTML = slidesHTML;
+
+                // Se estiver usando o Swiper, inicialize-o após inserir os slides:
+                // new Swiper('.portfolio-slider', {
+                //   // suas configurações aqui
+                // });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div id="awards" class="section pb-0">
+        <div class="container">
+          <div class="row g-4 g-xl-5">
+            <div class="col-12 col-xl-4">
+              <span class="title-heading text-white-04">Realizações</span>
+              <h1 class="display-3 fw-medium mb-0">
+                Conq<span class="text-gradient">uistas</span>
+              </h1>
+            </div>
+            <div class="col-12 col-xl-8">
+              <div class="row g-4">
+                <!-- Award box 1 -->
+                <div class="col-12 col-md-6">
+                  <div class="fancy-box">
+                    <h4>Certificado de Mérito (SADC)</h4>
+                    <h6 class="sm-heading text-white-04 mb-2">2024</h6>
+                    <p>
+                      Reconhecimento pela participação na equipa de trabalho da
+                      Reunião dos Ministros do Emprego e Trabalho e Parceiros
+                      Sociais da SADC pelo Desenvolvimento do portal e sistema
+                      de gestão, credenciamento e logística do evento.
+                    </p>
+                  </div>
+                </div>
+                <!-- Award box 2 -->
+                <div class="col-12 col-md-6">
+                  <div class="fancy-box">
+                    <h4>Medalhas na Feira de Ideias e Inovação na Alemanha</h4>
+                    <h6 class="sm-heading text-white-04 mb-2">2022</h6>
+                    <p>
+                      Conquista de duas medalhas na prestigiada feira,
+                      destacando o teu contributo significativo em tecnologia e
+                      inovação.
+                    </p>
+                  </div>
+                </div>
+                <!-- Award box 3 -->
+                <div class="col-12 col-md-6">
+                  <div class="fancy-box">
+                    <h4>Campeão Nacional ‑ Imagine Cup Angola</h4>
+                    <h6 class="sm-heading text-white-04 mb-2">2016</h6>
+                    <p>
+                      Primeiro lugar na competição de tecnologia e inovação
+                      promovida pela Microsoft, demonstrando habilidades
+                      excepcionais em desenvolvimento de software e soluções
+                      criativas.
+                    </p>
+                  </div>
+                </div>
+                <!-- Award box 4 -->
+                <div class="col-12 col-md-6">
+                  <div class="fancy-box">
+                    <h4>
+                      Campeão Nacional de Desenvolvedores de Jogos
+                      Universitários
+                    </h4>
+                    <h6 class="sm-heading text-white-04 mb-2">2016</h6>
+                    <p>
+                      Reconhecimento como o melhor desenvolvedor de jogos
+                      universitários em competições nacionais, evidenciando a
+                      tua criatividade e proficiência técnica.
+                    </p>
+                  </div>
+                </div>
+                <!-- end Award box 4 -->
+              </div>
+              <!-- end row(inner) -->
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </div>
+      <div id="contact" class="section pb-0">
+        <div class="container">
+          <div class="row g-4 g-xl-5">
+            <div class="col-12 col-xl-4">
+              <span class="title-heading text-white-04">Contacto</span>
+              <h1 class="display-3 fw-medium mb-0">
+                Vamos <span class="text-gradient">Conversar</span>
+              </h1>
+            </div>
+            <div class="col-12 col-xl-8">
+              <div class="row g-4 g-lg-5">
+                <div class="col-12 col-md-6">
+                  <h6 class="sm-heading">Email:</h6>
+                  <h3 class="mb-0">jamitengola@hotmail.com</h3>
+                </div>
+                <div class="col-12 col-md-6">
+                  <h6 class="sm-heading">Call:</h6>
+                  <h3 class="mb-0">+244 924482552</h3>
+                </div>
+              </div>
+              <!-- end row(inner) -->
+              <!-- Contact Form -->
+              <div class="contact-form mt-4 mt-lg-5 text-xl-end">
+                <form method="post" id="contactform">
+                  <div class="row gx-3 gy-0">
+                    <div class="col-12 col-md-6">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Name"
+                        required
+                      />
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="E-Mail"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                  ></textarea>
+                  <button class="button button-dot" type="submit">
+                    <span data-text="Send Message">Enviar Mensagem</span>
+                  </button>
+                </form>
+                <!-- Submit result -->
+                <div class="submit-result">
+                  <span id="success"
+                    >Thank you! Your Message has been sent.</span
+                  >
+                  <span id="error"
+                    >Something went wrong, Please try again!</span
+                  >
+                </div>
+              </div>
+              <!-- end contact-form -->
+            </div>
+          </div>
+          <!-- end row -->
+          <!-- Google Maps -->
+          <!-- <div
+            id="map1"
+            class="gmap gmap-md border-radius-1 mt-5"
+            data-latitude="51.513569"
+            data-longitude="-0.123443"
+          ></div> -->
+          <!-- end Google Maps -->
+        </div>
+        <!-- end container -->
+      </div>
+      <!-- end Contact section -->
+    </main>
+
+    <!-- Footer -->
+    <div class="py-4 py-lg-5 text-center">
+      <p>&copy; 2025 Jamite Ngola, All Rights Reserved.</p>
+    </div>
+    <!-- end Footer -->
+
+    <!-- Scroll To Top -->
+    <div class="scrolltotop">
+      <a class="button-circle" href="#">
+        <i class="bi bi-arrow-up"></i>
+        <i class="bi bi-arrow-up"></i>
+      </a>
+    </div>
+    <!-- end Scroll To Top -->
+
+    <!-- JavaScripts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="assets/plugins/jquery.min.js"></script>
+    <script src="assets/plugins/plugins.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <!-- Antes de fechar a tag </body> -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // duração padrão da animação (em milissegundos)
+        once: true, // a animação será executada apenas uma vez
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let puppetTriggered = false; // Indica se já disparou a primeira mensagem
+        let scrolledDown = false; // Controla a transição do scroll
+
+        // Função para exibir a mensagem do puppet
+        function showPuppet(message) {
+          const puppetEl = document.getElementById("puppet");
+          puppetEl.textContent = message;
+          puppetEl.style.display = "block";
+          // Esconde a mensagem após 3 segundos
+          setTimeout(() => {
+            puppetEl.style.display = "none";
+          }, 3000);
+        }
+
+        window.addEventListener("scroll", function () {
+          // Aplica a mudança de fundo se scrollY for 300px ou mais
+          if (window.scrollY >= 300) {
+            document.body.classList.add("scrolled");
+
+            // Se o usuário acabou de ultrapassar a marca (primeira vez ou novamente)
+            if (!scrolledDown) {
+              scrolledDown = true;
+              // Primeira vez: "Viu o Flash?"
+              if (!puppetTriggered) {
+                puppetTriggered = true;
+                showPuppet("Viu o Flash?");
+              } else {
+                // Se já passou uma vez, mostra mensagem alternativa
+                showPuppet("Ele só passa uma vez");
+              }
+            }
+          } else {
+            // document.body.classList.remove("scrolled");
+            // Reseta a variável para permitir nova verificação ao voltar acima de 300px
+            scrolledDown = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
