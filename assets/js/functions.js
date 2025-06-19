@@ -286,42 +286,39 @@ if (mapCanvas.length) {
   8. Contact Form
 ===============================================*/
 $("#contactform").on("submit", function(e) {
-  var name = $("#name").val();
+  e.preventDefault();
+  var nome = $("#nome").val();
   var email = $("#email").val();
-  var subject = $("#subject").val();
-  var message = $("#message").val();
+  var tipo = $("#tipo").val();
+  var resumo = $("#resumo").val();
 
-  if (name === "") {
-    $("#name").addClass("error-color");
+  if (nome === "") {
+    $("#nome").addClass("error-color");
   }
   if (email === "") {
     $("#email").addClass("error-color");
   }
-  if (subject === "") {
-    $("#subject").addClass("error-color");
+  if (tipo === "") {
+    $("#tipo").addClass("error-color");
   }
-  if (message === "") {
-    $("#message").addClass("error-color");
+  if (resumo === "") {
+    $("#resumo").addClass("error-color");
   }
-
   else {
     $.ajax({
-      url:"assets/php/contact-form.php",
-      data:$(this).serialize(),
-      type:"POST",
-      success:function(data){
-        $("#success").addClass("show-result"); //=== Show Success Message==
-        $("#contactform").each(function(){
-          this.reset();
-        });
+      url: "/api/diagnostico",
+      data: JSON.stringify({ nome, email, tipo, resumo }),
+      type: "POST",
+      contentType: "application/json",
+      success: function(data) {
+        $("#success").addClass("show-result");
+        $("#contactform").each(function(){ this.reset(); });
       },
-      error:function(data){
-        $("#error").addClass("show-result"); //===Show Error Message====
+      error: function(data) {
+        $("#error").addClass("show-result");
       }
     });
     var forms = $("#contactform input, #contactform textarea");
     forms.removeClass("error-color");
   }
-
-  e.preventDefault();
 });

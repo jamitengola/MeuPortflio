@@ -41,7 +41,8 @@
       #puppet {
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        left: 20px;
+        right: auto;
         background: #fff;
         color: rgba(0, 0, 0, 0.7);
         padding: 10px 20px;
@@ -49,6 +50,7 @@
         font-family: sans-serif;
         font-size: 16px;
         display: none;
+        z-index: 9999;
       }
     </style>
   </head>
@@ -146,7 +148,6 @@
               <img
                 src="assets/images/jamitengola.jpg"
                 alt=""
-                style="width: auto; height: 100%"
               />
             </div>
             <!-- end Hero Avatar -->
@@ -752,14 +753,14 @@
               <!-- end row(inner) -->
               <!-- Contact Form -->
               <div class="contact-form mt-4 mt-lg-5 text-xl-end">
-                <form method="post" id="contactform">
+                <form method="post" id="contactform" action="/api/diagnostico">
                   <div class="row gx-3 gy-0">
                     <div class="col-12 col-md-6">
                       <input
                         type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
+                        id="nome"
+                        name="nome"
+                        placeholder="Nome"
                         required
                       />
                     </div>
@@ -775,15 +776,16 @@
                   </div>
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Subject"
+                    id="tipo"
+                    name="tipo"
+                    placeholder="Tipo de solicitação (ex: orçamento, dúvida, parceria)"
                     required
                   />
                   <textarea
-                    name="message"
-                    id="message"
-                    placeholder="Message"
+                    name="resumo"
+                    id="resumo"
+                    placeholder="Mensagem"
+                    required
                   ></textarea>
                   <button class="button button-dot" type="submit">
                     <span data-text="Send Message">Enviar Mensagem</span>

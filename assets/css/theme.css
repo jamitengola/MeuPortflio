@@ -248,7 +248,8 @@ img {
 
 .scrolltotop {
   position: fixed;
-  right: 20px;
+  left: 20px;
+  right: auto;
   bottom: 20px;
   -webkit-transform: translateY(20px);
   transform: translateY(20px);
@@ -268,25 +269,29 @@ img {
 
 @media (min-width: 992px) {
   .scrolltotop {
-    right: 30px;
+    left: 30px;
+    right: auto;
   }
 }
 
 @media (min-width: 1200px) {
   .scrolltotop {
-    right: 40px;
+    left: 40px;
+    right: auto;
   }
 }
 
 @media (min-width: 1600px) {
   .scrolltotop {
-    right: 50px;
+    left: 50px;
+    right: auto;
   }
 }
 
 @media (min-width: 1920px) {
   .scrolltotop {
-    right: 60px;
+    left: 60px;
+    right: auto;
   }
 }
 
