@@ -6,6 +6,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -47,6 +48,14 @@ app.post('/api/chat', async (req, res) => {
     console.error('Erro detalhado:', err.response ? err.response.data : err.message);
     res.status(500).json({ error: 'Erro ao consultar o assistente.', details: err.response ? err.response.data : err.message });
   }
+});
+
+// Servir arquivos estáticos do portfólio
+app.use(express.static(path.join(__dirname)));
+
+// Redirecionar / para index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = process.env.PORT || 3001;
