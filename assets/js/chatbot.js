@@ -38,10 +38,19 @@
   const input = box.querySelector('#chatbot-input');
   const messages = box.querySelector('#chatbot-messages');
 
+  // Adiciona suporte a Markdown
+  const markedScript = document.createElement('script');
+  markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+  document.head.appendChild(markedScript);
+
   function addMsg(text, from) {
     const div = document.createElement('div');
     div.className = from === 'user' ? 'msg-user' : 'msg-bot';
-    div.innerHTML = `<span>${text}</span>`;
+    if (from === 'bot' && window.marked) {
+      div.innerHTML = `<span>${marked.parse(text)}</span>`;
+    } else {
+      div.innerHTML = `<span>${text}</span>`;
+    }
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
   }
