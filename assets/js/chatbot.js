@@ -63,7 +63,7 @@
     input.value = '';
     addMsg('Pensando...', 'bot');
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch('https://chatbackend-d7ceb2fpf0cnetdm.eastus-01.azurewebsites.net/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: msg })
