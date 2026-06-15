@@ -1,0 +1,2 @@
+Força novo deploy para publicar hotfix do jogo Missão Digital.
+Commit anterior a publicar: 993c2e58e8f330c0df007536c317f2fa76f9aa18
