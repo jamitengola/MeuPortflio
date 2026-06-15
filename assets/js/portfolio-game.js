@@ -8,7 +8,8 @@
   ready(() => {
     addGameNav();
     addHeroGameCTA();
-    mountGameWhenReady();
+    mountGame(false);
+    bindGameOpeners();
   });
 
   const missions = [
@@ -74,11 +75,11 @@
 
   function addGameNav() {
     const nav = document.querySelector('.nav-box .nav');
-    if (!nav || nav.querySelector('a[href="#missao-digital"]')) return;
+    if (!nav || nav.querySelector('[data-game-open]')) return;
 
     const item = document.createElement('li');
     item.className = 'nav-item';
-    item.innerHTML = '<a class="nav-link" href="#missao-digital"><i class="bi bi-arrow-right"></i>Jogo</a>';
+    item.innerHTML = '<a class="nav-link" href="#missao-digital" data-game-open><i class="bi bi-arrow-right"></i>Jogo</a>';
 
     const contact = nav.querySelector('a[href="#contact"]')?.closest('li');
     if (contact) nav.insertBefore(item, contact);
@@ -92,25 +93,55 @@
     const btn = document.createElement('a');
     btn.href = '#missao-digital';
     btn.className = 'game-anchor-button';
+    btn.setAttribute('data-game-open', 'true');
     btn.innerHTML = '<i class="bi bi-controller"></i> Jogar Missão Digital';
     hero.appendChild(btn);
   }
 
-  function mountGameWhenReady(attempt = 0) {
-    if (document.querySelector('#missao-digital')) return;
+  function bindGameOpeners() {
+    document.addEventListener('click', (event) => {
+      const opener = event.target.closest('[data-game-open], a[href="#missao-digital"]');
+      if (!opener) return;
+      event.preventDefault();
+      mountGame(true);
+    });
+  }
 
-    const stack = document.querySelector('#stack-interativo');
-    const portfolio = document.querySelector('#portfolio');
-    const target = stack || portfolio || document.querySelector('#services');
+  function mountGame(shouldScroll) {
+    let section = document.querySelector('#missao-digital');
 
-    if (!target && attempt < 12) {
-      setTimeout(() => mountGameWhenReady(attempt + 1), 250);
-      return;
+    if (!section) {
+      section = createGameSection();
+      const stack = document.querySelector('#stack-interativo');
+      const portfolio = document.querySelector('#portfolio');
+      const services = document.querySelector('#services');
+      const main = document.querySelector('main');
+
+      if (stack) stack.insertAdjacentElement('afterend', section);
+      else if (portfolio) portfolio.insertAdjacentElement('beforebegin', section);
+      else if (services) services.insertAdjacentElement('afterend', section);
+      else if (main) main.appendChild(section);
+      else document.body.appendChild(section);
+
+      bindGame(section);
+      renderMission(section);
+      startTimer(section);
     }
 
+    if (shouldScroll) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const shell = section.querySelector('.digital-game-shell');
+        shell?.classList.add('game-highlight');
+        setTimeout(() => shell?.classList.remove('game-highlight'), 1300);
+      }, 80);
+    }
+  }
+
+  function createGameSection() {
     const section = document.createElement('section');
     section.id = 'missao-digital';
-    section.className = 'digital-game-section wow-reveal';
+    section.className = 'digital-game-section wow-reveal in-view';
     section.innerHTML = `
       <div class="container">
         <div class="digital-game-shell">
@@ -163,14 +194,7 @@
         </div>
       </div>
     `;
-
-    if (stack) stack.insertAdjacentElement('afterend', section);
-    else if (portfolio) portfolio.insertAdjacentElement('beforebegin', section);
-    else target?.insertAdjacentElement('afterend', section);
-
-    bindGame(section);
-    renderMission(section);
-    startTimer(section);
+    return section;
   }
 
   function bindGame(root) {
@@ -200,10 +224,8 @@
 
   function renderOptions(root) {
     const mission = missions[state.missionIndex];
-    const pool = shuffle([
-      ...mission.correct,
-      ...options.map((item) => item.name).filter((name) => !mission.correct.includes(name)).slice(0, 8)
-    ]).slice(0, 12);
+    const distractors = options.map((item) => item.name).filter((name) => !mission.correct.includes(name));
+    const pool = shuffle([...mission.correct, ...shuffle(distractors).slice(0, 8)]).slice(0, 12);
 
     root.querySelector('[data-game-options]').innerHTML = pool.map((name) => {
       const item = options.find((option) => option.name === name) || { name, desc: 'Peça técnica' };
@@ -297,6 +319,7 @@
     state.score = 0;
     state.solved = 0;
     state.startedAt = Date.now();
+    startTimer(root);
     renderMission(root);
   }
 
@@ -332,7 +355,6 @@
   function startTimer(root) {
     clearInterval(state.timer);
     const timerEl = root.querySelector('[data-game-time]');
-    state.startedAt = Date.now();
     state.timer = setInterval(() => {
       const total = Math.floor((Date.now() - state.startedAt) / 1000);
       const min = String(Math.floor(total / 60)).padStart(2, '0');
@@ -356,7 +378,7 @@
   }
 
   function shuffle(items) {
-    return items
+    return [...items]
       .map((value) => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
