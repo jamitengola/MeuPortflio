@@ -1,0 +1,5 @@
+Força novo deploy para publicar a Corrida Digital expansível na home.
+Commits relevantes:
+- 2753f73643a24d39ca099e525fd882e0ade780cc
+- 3c23b530a10d5637f39daa0e8ec8ade81d28264c
+- 41bb528387812b70d7c547247c0352953a89f491
