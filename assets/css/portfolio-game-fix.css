@@ -1,0 +1,19 @@
+/* Correção de abertura/destaque do jogo Missão Digital */
+.digital-game-shell.game-highlight {
+  animation: gameFocusPulse 1.3s ease both;
+}
+
+@keyframes gameFocusPulse {
+  0% {
+    box-shadow: 0 30px 120px rgba(0, 0, 0, 0.38), 0 0 0 rgba(6, 182, 212, 0);
+    transform: translateY(0) scale(1);
+  }
+  35% {
+    box-shadow: 0 30px 120px rgba(0, 0, 0, 0.38), 0 0 0 10px rgba(6, 182, 212, 0.16), 0 0 70px rgba(139, 92, 246, 0.34);
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    box-shadow: 0 30px 120px rgba(0, 0, 0, 0.38), 0 0 0 rgba(6, 182, 212, 0);
+    transform: translateY(0) scale(1);
+  }
+}
