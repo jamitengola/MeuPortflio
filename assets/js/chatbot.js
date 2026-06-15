@@ -1,5 +1,5 @@
 // Chatbot Widget Frontend
-// Adiciona um botão flutuante, uma janela de chat simples e a camada interativa do portfólio.
+// Adiciona um botão flutuante, uma janela de chat simples e as camadas interativas do portfólio.
 
 (function () {
   // Carrega a camada visual/interativa do portfólio sem alterar o template base.
@@ -12,6 +12,17 @@
   wowScript.src = 'assets/js/portfolio-wow.js';
   wowScript.defer = true;
   document.head.appendChild(wowScript);
+
+  // Carrega o mini-jogo Missão Digital como parte da experiência do visitante.
+  const gameCss = document.createElement('link');
+  gameCss.rel = 'stylesheet';
+  gameCss.href = 'assets/css/portfolio-game.css';
+  document.head.appendChild(gameCss);
+
+  const gameScript = document.createElement('script');
+  gameScript.src = 'assets/js/portfolio-game.js';
+  gameScript.defer = true;
+  document.head.appendChild(gameScript);
 
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
