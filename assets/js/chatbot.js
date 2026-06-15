@@ -19,6 +19,11 @@
   gameCss.href = 'assets/css/portfolio-game.css';
   document.head.appendChild(gameCss);
 
+  const gameFixCss = document.createElement('link');
+  gameFixCss.rel = 'stylesheet';
+  gameFixCss.href = 'assets/css/portfolio-game-fix.css';
+  document.head.appendChild(gameFixCss);
+
   const gameScript = document.createElement('script');
   gameScript.src = 'assets/js/portfolio-game.js';
   gameScript.defer = true;
