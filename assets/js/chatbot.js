@@ -2,7 +2,7 @@
 // Adiciona um botão flutuante, uma janela de chat simples e as camadas interativas do portfólio.
 
 (function () {
-  const version = '20260615-hotfix2';
+  const version = '20260615-race1';
 
   // Carrega a camada visual/interativa do portfólio sem alterar o template base.
   const wowCss = document.createElement('link');
@@ -15,26 +15,16 @@
   wowScript.defer = true;
   document.head.appendChild(wowScript);
 
-  // Carrega o mini-jogo Missão Digital como parte da experiência do visitante.
+  // Carrega a Corrida Digital como experiência expansível dentro da home.
   const gameCss = document.createElement('link');
   gameCss.rel = 'stylesheet';
   gameCss.href = `assets/css/portfolio-game.css?v=${version}`;
   document.head.appendChild(gameCss);
 
-  const gameFixCss = document.createElement('link');
-  gameFixCss.rel = 'stylesheet';
-  gameFixCss.href = `assets/css/portfolio-game-fix.css?v=${version}`;
-  document.head.appendChild(gameFixCss);
-
   const gameScript = document.createElement('script');
   gameScript.src = `assets/js/portfolio-game.js?v=${version}`;
   gameScript.defer = true;
   document.head.appendChild(gameScript);
-
-  const gameHotfixScript = document.createElement('script');
-  gameHotfixScript.src = `assets/js/portfolio-game-hotfix.js?v=${version}`;
-  gameHotfixScript.defer = true;
-  document.head.appendChild(gameHotfixScript);
 
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
