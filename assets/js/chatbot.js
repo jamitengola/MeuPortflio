@@ -1,7 +1,18 @@
 // Chatbot Widget Frontend
-// Adiciona um botão flutuante e uma janela de chat simples
+// Adiciona um botão flutuante, uma janela de chat simples e a camada interativa do portfólio.
 
 (function () {
+  // Carrega a camada visual/interativa do portfólio sem alterar o template base.
+  const wowCss = document.createElement('link');
+  wowCss.rel = 'stylesheet';
+  wowCss.href = 'assets/css/portfolio-wow.css';
+  document.head.appendChild(wowCss);
+
+  const wowScript = document.createElement('script');
+  wowScript.src = 'assets/js/portfolio-wow.js';
+  wowScript.defer = true;
+  document.head.appendChild(wowScript);
+
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -71,7 +82,7 @@
       const data = await res.json();
       messages.lastChild.innerHTML = `<span>${data.answer || 'Desculpe, não consegui responder.'}</span>`;
     } catch {
-      messages.lastChild.innerHTML = `<span>Erro ao conectar ao assistente.</span>`;
+      messages.lastChild.innerHTML = '<span>Erro ao conectar ao assistente.</span>';
     }
   };
 })();
