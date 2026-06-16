@@ -2,7 +2,7 @@
 // Adiciona um botão flutuante, uma janela de chat simples e as camadas interativas do portfólio.
 
 (function () {
-  const version = '20260615-race1';
+  const version = '20260615-race2';
 
   // Carrega a camada visual/interativa do portfólio sem alterar o template base.
   const wowCss = document.createElement('link');
@@ -21,10 +21,20 @@
   gameCss.href = `assets/css/portfolio-game.css?v=${version}`;
   document.head.appendChild(gameCss);
 
+  const gameMobileCss = document.createElement('link');
+  gameMobileCss.rel = 'stylesheet';
+  gameMobileCss.href = `assets/css/portfolio-game-mobile.css?v=${version}`;
+  document.head.appendChild(gameMobileCss);
+
   const gameScript = document.createElement('script');
   gameScript.src = `assets/js/portfolio-game.js?v=${version}`;
   gameScript.defer = true;
   document.head.appendChild(gameScript);
+
+  const gameAudioScript = document.createElement('script');
+  gameAudioScript.src = `assets/js/portfolio-game-audio.js?v=${version}`;
+  gameAudioScript.defer = true;
+  document.head.appendChild(gameAudioScript);
 
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
