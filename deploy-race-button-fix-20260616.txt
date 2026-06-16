@@ -1,0 +1,5 @@
+Força novo deploy para publicar correção do botão da Corrida Digital.
+Commits:
+- a745fc38df7beacc60ad83007fe09c3cd7e10de4
+- d2724a382fad17948b26e80c59a740878b67e4aa
+- 9e556dccb359ba37757f0c0d2a3e9ba29eae5cfc
