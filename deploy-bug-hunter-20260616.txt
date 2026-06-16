@@ -1,0 +1,5 @@
+Força novo deploy para publicar o novo jogo arcade Bug Hunter — Operação GovTech.
+Commits:
+- f79e2df5c7b6d5db1bdbf8345e67697afd48207d
+- 03e7a4e39bf74f58cb85382cb409d680e7634b9a
+- 9c2e9b3e2c87d4d2527a8441cb953d6b13279409
