@@ -1,0 +1,190 @@
+/* Melhorias mobile/tablet para Corrida Digital */
+@media (hover: none), (pointer: coarse) {
+  .race-shell {
+    padding: max(0.55rem, env(safe-area-inset-top)) max(0.55rem, env(safe-area-inset-right)) max(0.55rem, env(safe-area-inset-bottom)) max(0.55rem, env(safe-area-inset-left));
+  }
+
+  .race-topbar {
+    gap: 0.65rem;
+    padding: 0.65rem;
+  }
+
+  .race-actions {
+    gap: 0.5rem;
+  }
+
+  .race-btn {
+    min-height: 44px;
+    padding: 0.72rem 0.85rem;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .race-body {
+    gap: 0.65rem;
+  }
+
+  .race-brief {
+    padding: 0.85rem;
+  }
+
+  .race-title {
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .race-text {
+    margin-bottom: 0.55rem;
+  }
+
+  .race-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+    margin: 0.45rem 0 0.65rem;
+  }
+
+  .race-stat {
+    padding: 0.55rem 0.4rem;
+    border-radius: 16px;
+  }
+
+  .race-stat strong {
+    font-size: 1.05rem;
+  }
+
+  .race-vision {
+    min-height: auto;
+    padding: 0.75rem;
+    border-radius: 20px;
+  }
+
+  .race-vision h3 {
+    font-size: 1.05rem;
+  }
+
+  .race-vision p {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .race-game {
+    padding: 0.75rem;
+  }
+
+  .race-hud {
+    margin-bottom: 0.55rem;
+  }
+
+  .race-hud-help {
+    font-size: 0.8rem;
+  }
+
+  .race-canvas-wrap {
+    min-height: min(58vh, 520px);
+    border-radius: 22px;
+    touch-action: none;
+  }
+
+  .digital-race-canvas {
+    min-height: min(58vh, 520px);
+    touch-action: none;
+  }
+
+  .race-floating-tip {
+    bottom: 0.7rem;
+    width: calc(100% - 1rem);
+    font-size: 0.78rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .race-mobile-controls {
+    position: sticky;
+    bottom: max(0.55rem, env(safe-area-inset-bottom));
+    z-index: 5;
+    margin-top: 0.55rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .race-control {
+    width: 100%;
+    height: 4.4rem;
+    border-radius: 24px;
+    font-size: 2rem;
+    font-weight: 900;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .race-start-box,
+  .race-end-box {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 820px) and (orientation: landscape) {
+  .digital-race-overlay.open .race-shell {
+    grid-template-rows: auto 1fr;
+    padding: 0.5rem;
+  }
+
+  .digital-race-overlay.open .race-topbar {
+    position: relative;
+    top: 0;
+    flex-direction: row;
+    border-radius: 22px;
+  }
+
+  .digital-race-overlay.open .race-body {
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: 0.55rem;
+  }
+
+  .digital-race-overlay.open .race-title {
+    font-size: clamp(1.7rem, 6vw, 3rem);
+  }
+
+  .digital-race-overlay.open .race-text {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .digital-race-overlay.open .race-canvas-wrap,
+  .digital-race-overlay.open .digital-race-canvas {
+    min-height: calc(100vh - 7.4rem);
+  }
+
+  .digital-race-overlay.open .race-mobile-controls {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.65rem;
+    pointer-events: none;
+  }
+
+  .digital-race-overlay.open .race-control {
+    pointer-events: auto;
+    opacity: 0.78;
+    height: 3.6rem;
+  }
+}
+
+.race-sound-on .race-canvas-wrap {
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.16), 0 30px 110px rgba(34, 197, 94, 0.08);
+}
+
+.race-btn.sound-muted {
+  opacity: 0.72;
+}
+
+.race-control.control-pulse {
+  animation: raceControlPulse 240ms ease both;
+}
+
+@keyframes raceControlPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); background: rgba(6, 182, 212, 0.2); }
+  100% { transform: scale(1); }
+}
