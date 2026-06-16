@@ -2,7 +2,7 @@
 // Adiciona um botão flutuante, uma janela de chat simples e as camadas interativas do portfólio.
 
 (function () {
-  const version = '20260616-race-pro2';
+  const version = '20260616-bug-hunter1';
 
   // Carrega a camada visual/interativa do portfólio sem alterar o template base.
   const wowCss = document.createElement('link');
@@ -15,26 +15,16 @@
   wowScript.defer = true;
   document.head.appendChild(wowScript);
 
-  // Carrega a Corrida Digital Pro como experiência expansível dentro da home.
-  const gameCss = document.createElement('link');
-  gameCss.rel = 'stylesheet';
-  gameCss.href = `assets/css/portfolio-game.css?v=${version}`;
-  document.head.appendChild(gameCss);
+  // Carrega o jogo arcade Bug Hunter dentro da home.
+  const bugHunterCss = document.createElement('link');
+  bugHunterCss.rel = 'stylesheet';
+  bugHunterCss.href = `assets/css/portfolio-bug-hunter.css?v=${version}`;
+  document.head.appendChild(bugHunterCss);
 
-  const raceProCss = document.createElement('link');
-  raceProCss.rel = 'stylesheet';
-  raceProCss.href = `assets/css/portfolio-race-pro.css?v=${version}`;
-  document.head.appendChild(raceProCss);
-
-  const raceProScript = document.createElement('script');
-  raceProScript.src = `assets/js/portfolio-race-pro.js?v=${version}`;
-  raceProScript.defer = true;
-  document.head.appendChild(raceProScript);
-
-  const raceLauncherScript = document.createElement('script');
-  raceLauncherScript.src = `assets/js/portfolio-race-launcher.js?v=${version}`;
-  raceLauncherScript.defer = true;
-  document.head.appendChild(raceLauncherScript);
+  const bugHunterScript = document.createElement('script');
+  bugHunterScript.src = `assets/js/portfolio-bug-hunter.js?v=${version}`;
+  bugHunterScript.defer = true;
+  document.head.appendChild(bugHunterScript);
 
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
