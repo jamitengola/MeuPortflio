@@ -2,7 +2,7 @@
 // Adiciona um botão flutuante, uma janela de chat simples e as camadas interativas do portfólio.
 
 (function () {
-  const version = '20260616-race-pro1';
+  const version = '20260616-race-pro2';
 
   // Carrega a camada visual/interativa do portfólio sem alterar o template base.
   const wowCss = document.createElement('link');
@@ -30,6 +30,11 @@
   raceProScript.src = `assets/js/portfolio-race-pro.js?v=${version}`;
   raceProScript.defer = true;
   document.head.appendChild(raceProScript);
+
+  const raceLauncherScript = document.createElement('script');
+  raceLauncherScript.src = `assets/js/portfolio-race-launcher.js?v=${version}`;
+  raceLauncherScript.defer = true;
+  document.head.appendChild(raceLauncherScript);
 
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
