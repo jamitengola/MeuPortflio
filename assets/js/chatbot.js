@@ -2,7 +2,7 @@
 // Adiciona um botão flutuante, uma janela de chat simples e as camadas interativas do portfólio.
 
 (function () {
-  const version = '20260615-race2';
+  const version = '20260616-race-pro1';
 
   // Carrega a camada visual/interativa do portfólio sem alterar o template base.
   const wowCss = document.createElement('link');
@@ -15,26 +15,21 @@
   wowScript.defer = true;
   document.head.appendChild(wowScript);
 
-  // Carrega a Corrida Digital como experiência expansível dentro da home.
+  // Carrega a Corrida Digital Pro como experiência expansível dentro da home.
   const gameCss = document.createElement('link');
   gameCss.rel = 'stylesheet';
   gameCss.href = `assets/css/portfolio-game.css?v=${version}`;
   document.head.appendChild(gameCss);
 
-  const gameMobileCss = document.createElement('link');
-  gameMobileCss.rel = 'stylesheet';
-  gameMobileCss.href = `assets/css/portfolio-game-mobile.css?v=${version}`;
-  document.head.appendChild(gameMobileCss);
+  const raceProCss = document.createElement('link');
+  raceProCss.rel = 'stylesheet';
+  raceProCss.href = `assets/css/portfolio-race-pro.css?v=${version}`;
+  document.head.appendChild(raceProCss);
 
-  const gameScript = document.createElement('script');
-  gameScript.src = `assets/js/portfolio-game.js?v=${version}`;
-  gameScript.defer = true;
-  document.head.appendChild(gameScript);
-
-  const gameAudioScript = document.createElement('script');
-  gameAudioScript.src = `assets/js/portfolio-game-audio.js?v=${version}`;
-  gameAudioScript.defer = true;
-  document.head.appendChild(gameAudioScript);
+  const raceProScript = document.createElement('script');
+  raceProScript.src = `assets/js/portfolio-race-pro.js?v=${version}`;
+  raceProScript.defer = true;
+  document.head.appendChild(raceProScript);
 
   // Adiciona o CSS do chatbot
   const link = document.createElement('link');
