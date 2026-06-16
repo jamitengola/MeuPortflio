@@ -1,0 +1,5 @@
+Força novo deploy para publicar Corrida Digital Pro com suporte a telemóveis, tablets, som, vibração e efeitos.
+Commits:
+- 3dbb51aabe71c9fa0c97e1827707a4c6dbaf9515
+- c2524d75f3642f170b9eecabfd43b5b2cac580ac
+- 65444c413a7c66db61e44be35de488eefc7240f6
