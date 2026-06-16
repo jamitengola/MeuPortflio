@@ -1,0 +1,512 @@
+/* Bug Hunter — arcade real para o portfólio */
+.bug-hunter-open,
+.bug-hunter-open body {
+  overflow: hidden;
+}
+
+.bug-hunter-launcher,
+.game-anchor-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+  padding: 0.84rem 1.18rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.96), rgba(6, 182, 212, 0.82));
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 18px 54px rgba(236, 72, 153, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.bug-hunter-launcher:hover,
+.game-anchor-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 28px 82px rgba(6, 182, 212, 0.28);
+  filter: saturate(1.18);
+}
+
+.bug-hunter-floating {
+  position: fixed;
+  right: 1rem;
+  bottom: 5.3rem;
+  z-index: 9999;
+  margin: 0;
+  padding: 0.78rem 1rem;
+}
+
+.bug-hunter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: none;
+  opacity: 0;
+  transform: scale(0.96);
+  color: #fff;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(236, 72, 153, 0.28), transparent 25rem),
+    radial-gradient(circle at 88% 12%, rgba(6, 182, 212, 0.2), transparent 24rem),
+    radial-gradient(circle at 50% 112%, rgba(34, 197, 94, 0.13), transparent 24rem),
+    rgba(2, 6, 23, 0.97);
+  backdrop-filter: blur(22px);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  overscroll-behavior: contain;
+}
+
+.bug-hunter-overlay.open {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bug-hunter-overlay,
+.bug-hunter-overlay * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bug-shell {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.75rem;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.bug-topbar,
+.bug-panel {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(15, 23, 42, 0.76);
+  box-shadow: 0 30px 110px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(18px);
+}
+
+.bug-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 999px;
+  padding: 0.75rem;
+}
+
+.bug-brand,
+.bug-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.bug-mark {
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ec4899, #06b6d4);
+  box-shadow: 0 0 34px rgba(6, 182, 212, 0.32);
+}
+
+.bug-brand strong,
+.bug-brand small {
+  display: block;
+  line-height: 1.1;
+}
+
+.bug-brand small {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.bug-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 999px;
+  padding: 0.72rem 0.96rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-weight: 900;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.bug-btn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  border-color: rgba(6, 182, 212, 0.48);
+  background: rgba(6, 182, 212, 0.13);
+}
+
+.bug-btn.primary {
+  border: 0;
+  background: linear-gradient(135deg, #ec4899, #06b6d4);
+}
+
+.bug-btn.success {
+  border: 0;
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+
+.bug-layout {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 0.86fr 1.35fr;
+  gap: 1rem;
+}
+
+.bug-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.bug-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.bug-kicker {
+  color: #67e8f9;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.bug-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 5.3rem);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+}
+
+.bug-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+}
+
+.bug-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.bug-stat {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 0.75rem 0.55rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.bug-stat span {
+  display: block;
+  color: rgba(255, 255, 255, 0.54);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.68rem;
+}
+
+.bug-stat strong {
+  display: block;
+  margin-top: 0.22rem;
+  font-size: 1.18rem;
+}
+
+.bug-vision {
+  flex: 1;
+  min-height: 170px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 24px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.1), rgba(236, 72, 153, 0.08));
+}
+
+.bug-vision h3 {
+  margin: 0 0 0.45rem;
+}
+
+.bug-vision p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+}
+
+.bug-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.bug-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.62rem;
+  border: 1px solid rgba(34, 197, 94, 0.28);
+  background: rgba(34, 197, 94, 0.11);
+  color: #bbf7d0;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.bug-game {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0.9rem;
+  min-height: 0;
+}
+
+.bug-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.bug-hud strong {
+  display: block;
+  letter-spacing: -0.02em;
+}
+
+.bug-hud small {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.bug-canvas-wrap {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #030712;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.bug-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  touch-action: none;
+}
+
+.bug-screen {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.bug-screen.hidden {
+  display: none;
+}
+
+.bug-box {
+  width: min(560px, 100%);
+  text-align: center;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(15, 23, 42, 0.9);
+  padding: 1.2rem;
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.36);
+}
+
+.bug-box h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  letter-spacing: -0.05em;
+}
+
+.bug-box p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.bug-tip {
+  position: absolute;
+  left: 50%;
+  bottom: 0.8rem;
+  transform: translateX(-50%);
+  width: min(620px, calc(100% - 1rem));
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(2, 6, 23, 0.68);
+  backdrop-filter: blur(10px);
+  padding: 0.62rem 0.85rem;
+  text-align: center;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.72);
+  pointer-events: none;
+}
+
+.bug-tip.pulse {
+  animation: bugPulse 0.5s ease both;
+}
+
+@keyframes bugPulse {
+  0% { transform: translateX(-50%) scale(1); }
+  45% { transform: translateX(-50%) scale(1.045); box-shadow: 0 0 34px rgba(236, 72, 153, 0.28); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+.bug-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.7rem;
+}
+
+.bug-control {
+  width: 4.5rem;
+  height: 3.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 900;
+  touch-action: none;
+}
+
+.bug-control.primary {
+  border: 0;
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+
+@media (max-width: 1020px) {
+  .bug-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bug-canvas-wrap,
+  .bug-canvas {
+    min-height: 54dvh;
+  }
+}
+
+@media (max-width: 700px) {
+  .bug-shell {
+    padding: 0.5rem;
+    gap: 0.45rem;
+  }
+
+  .bug-topbar {
+    border-radius: 24px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .bug-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .bug-btn {
+    width: 100%;
+    min-height: 2.8rem;
+  }
+
+  .bug-info {
+    max-height: 37dvh;
+    overflow: auto;
+    padding: 0.85rem;
+  }
+
+  .bug-title {
+    font-size: clamp(2rem, 12vw, 3.6rem);
+  }
+
+  .bug-text,
+  .bug-hud small,
+  .bug-brand small {
+    display: none;
+  }
+
+  .bug-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+  }
+
+  .bug-stat {
+    padding: 0.52rem 0.25rem;
+    border-radius: 14px;
+  }
+
+  .bug-stat strong {
+    font-size: 0.95rem;
+  }
+
+  .bug-vision {
+    min-height: 92px;
+    padding: 0.72rem;
+  }
+
+  .bug-vision h3 {
+    font-size: 1rem;
+  }
+
+  .bug-vision p {
+    font-size: 0.85rem;
+    line-height: 1.42;
+  }
+
+  .bug-game {
+    padding: 0.55rem;
+  }
+
+  .bug-canvas-wrap,
+  .bug-canvas {
+    min-height: 45dvh;
+  }
+
+  .bug-floating-launcher,
+  .bug-hunter-floating {
+    right: 0.8rem;
+    bottom: 4.8rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .bug-info {
+    max-height: 32dvh;
+  }
+
+  .bug-canvas-wrap,
+  .bug-canvas {
+    min-height: 44dvh;
+  }
+
+  .bug-hunter-floating span {
+    display: none;
+  }
+
+  .bug-hunter-floating {
+    width: 3.35rem;
+    height: 3.35rem;
+    padding: 0;
+  }
+}
