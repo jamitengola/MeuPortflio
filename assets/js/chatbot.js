@@ -1,6 +1,6 @@
 // Portfolio integrations: visual layer, Bug Hunter and accessible assistant.
 (function () {
-  const version = '20260712-portfolio-v3';
+  const version = '20260712-mobile-v4';
   const addStylesheet = (href) => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -14,11 +14,53 @@
     document.head.appendChild(script);
   };
 
+  const viewport = document.querySelector('meta[name="viewport"]');
+  if (viewport) {
+    viewport.setAttribute('content', 'width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5');
+  }
+
+  const updateViewportHeight = () => {
+    document.documentElement.style.setProperty('--mobile-vh', `${window.innerHeight * 0.01}px`);
+  };
+  updateViewportHeight();
+  window.addEventListener('resize', updateViewportHeight, { passive: true });
+  window.addEventListener('orientationchange', () => window.setTimeout(updateViewportHeight, 180), { passive: true });
+
   addStylesheet('assets/css/portfolio-wow.css');
   addScript('assets/js/portfolio-wow.js');
   addStylesheet('assets/css/portfolio-bug-hunter.css');
   addScript('assets/js/portfolio-bug-hunter.js');
   addStylesheet('assets/css/chatbot.css');
+  addStylesheet('assets/css/mobile.css');
+
+  const navBox = document.querySelector('.nav-box');
+  const navToggle = document.getElementById('nav-toggle');
+  if (navBox && navToggle) {
+    const syncMenuState = () => {
+      const isOpen = navBox.classList.contains('show');
+      document.body.classList.toggle('mobile-menu-open', isOpen && window.matchMedia('(max-width: 767.98px)').matches);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    const observer = new MutationObserver(syncMenuState);
+    observer.observe(navBox, { attributes: true, attributeFilter: ['class'] });
+
+    navBox.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        navBox.classList.remove('show');
+        navToggle.classList.remove('active');
+        syncMenuState();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 767) {
+        document.body.classList.remove('mobile-menu-open');
+      }
+    }, { passive: true });
+
+    syncMenuState();
+  }
 
   const escapeHtml = (value) => String(value)
     .replaceAll('&', '&amp;')
@@ -31,6 +73,7 @@
   button.id = 'chatbot-btn';
   button.type = 'button';
   button.setAttribute('aria-label', 'Abrir assistente virtual');
+  button.setAttribute('aria-expanded', 'false');
   button.innerHTML = '<i class="bi bi-chat-dots"></i>';
   document.body.appendChild(button);
 
@@ -68,15 +111,18 @@
   const open = () => {
     box.style.display = 'flex';
     button.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('chatbot-open');
     if (!greeted) {
       greeted = true;
       addMessage('Olá! Posso explicar a experiência do Jamite, os projetos em destaque, a stack técnica ou indicar o melhor contacto.', 'bot');
     }
-    window.setTimeout(() => input.focus(), 80);
+    window.setTimeout(() => input.focus({ preventScroll: true }), 80);
   };
   const close = () => {
     box.style.display = 'none';
     button.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('chatbot-open');
+    button.focus({ preventScroll: true });
   };
 
   button.addEventListener('click', open);
@@ -110,7 +156,7 @@
       console.warn('Chat assistant unavailable:', error);
     } finally {
       input.disabled = false;
-      input.focus();
+      input.focus({ preventScroll: true });
     }
   });
 })();
