@@ -210,7 +210,7 @@
   }
 
   function enableActiveNavigation() {
-    const links = [...document.querySelectorAll('.nav-box a[href^="#"]')];
+    const links = [...document.querySelectorAll('.nav-box a[href^="#"]')].filter((link) => (link.getAttribute('href') || '').length > 1);
     const sections = links.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
